@@ -1,0 +1,147 @@
+:root
+{
+    --gray-one: #F5F5F5;
+    --gray-two: #cecbcb;
+    --display-colour:#222222;
+    --equals-colour:#ff7b00;
+}
+
+*
+{
+    padding:0;
+    border:none;
+    line-height: normal;
+}
+
+body
+{
+    display: flex;
+    background: radial-gradient(circle, rgba(249,208,255,1) 31%, rgba(255,216,216,1) 100%);
+    justify-content: center;
+    align-content: center;
+}
+
+.calculator
+{
+
+    background-color: var(--gray-two);
+    margin-top: 15%;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border-radius: 0.6rem;
+    overflow: hidden;
+
+    -webkit-box-shadow: 0px 5px 12px -1px #000000; 
+    box-shadow: 0px 5px 12px -1px #000000;
+}
+
+.calculator-display
+{
+    width:16rem;
+    
+    background-color: var(--display-colour);
+    color:white;
+
+    padding: 0.75rem 1rem;
+    font-size:2rem;
+    text-align: right;
+}
+
+.calculator-buttons
+{
+    display:grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    
+    grid-template-areas: 
+    "divide times minus add"
+    "seven eight nine equals"
+    "four five six equals"
+    "one two three equals"
+    "zero decimal clear equals";
+
+}
+
+.calculator-buttons>.calculator-button
+{   
+    padding:0.7rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-buttons>.calculator-button:hover,.calculator-buttons>.calculator-button:focus
+{   
+    -webkit-box-shadow: inset 0px 0px 0px 1px #919191; 
+    box-shadow: inset 0px 0px 0px 1px #919191;
+}
+
+.calculator-buttons>.calculator-button[data-type="number"]{
+    background-color: var(--gray-one);
+}
+
+.calculator-buttons>.calculator-button[data-type="operator"]{
+    background-color: var(--gray-two);
+}
+
+.calculator-buttons>.calculator-button[data-val="1"] {
+    grid-area: one;
+}
+
+.calculator-buttons>.calculator-button[data-val="2"] {
+    grid-area: two;
+}
+
+.calculator-buttons>.calculator-button[data-val="3"] {
+    grid-area: three;
+}
+
+.calculator-buttons>.calculator-button[data-val="4"] {
+    grid-area: four;
+}
+
+.calculator-buttons>.calculator-button[data-val="5"] {
+    grid-area: five;
+}
+
+.calculator-buttons>.calculator-button[data-val="6"] {
+    grid-area: six;
+}
+
+.calculator-buttons>.calculator-button[data-val="7"] {
+    grid-area: seven;
+}
+
+.calculator-buttons>.calculator-button[data-val="8"] {
+    grid-area: eight;
+}
+
+.calculator-buttons>.calculator-button[data-val="9"] {
+    grid-area: nine;
+}
+
+.calculator-buttons>.calculator-button[data-val="0"] {
+    grid-area: zero;
+}
+
+.calculator-buttons>.calculator-button[data-val="."] {
+    grid-area: decimal;
+}
+
+.calculator-buttons>.calculator-button[data-val="clear"] {
+    grid-area: clear;
+}
+
+.calculator-buttons>.calculator-button[data-val="equals"] {
+    grid-area: equals;
+    background-color: var(--equals-colour);
+}
+
+.calculator-buttons>.calculator-button[data-type="number"]:active, 
+.calculator-buttons>.calculator-button[data-type="clear"]:active,
+.calculator-buttons>.calculator-button[data-type="decimal"]:active
+{
+    background-color: var(--gray-two);
+}
